@@ -23,6 +23,10 @@
     padding-right: 20px;
 }
 
+.header-button{
+    line-height:40px;
+}
+
 a.ellipse{
     width: 40px;
     text-align: center;

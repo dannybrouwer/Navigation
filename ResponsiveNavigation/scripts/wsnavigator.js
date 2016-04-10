@@ -191,7 +191,7 @@
             overflowMenu = overflowMenu.addClass("overflowTab"); 
         $(overflowMenu).wsmenu({ autoResize: true });
         
-        var ellipsMenu = $("<li><a class='ellipse' href=''><span class='fa fa-ellipsis-h'></span></a></li>");
+        var ellipsMenu = $("<li><a class='ellipse' href=''><span class='fa fa-ellipsis-h header-button'></span></a></li>");
         ellipsMenu.find("a").click(function () {
             eformity.framework.toggleVisibility(overflowMenu);
             return false;
