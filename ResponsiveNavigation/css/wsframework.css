@@ -1,0 +1,112 @@
+﻿
+/*-----------------------------------------------------------*/
+/* Main view                                                 */ 
+/*-----------------------------------------------------------*/
+
+body{
+    padding: 0px;
+    margin:0px;
+}
+
+div.ws-view-window {
+    position: absolute;
+    width:100%;
+    height: 100%;
+}
+
+/*-----------------------------------------------------------*/
+/* Content                                                   */ 
+/*-----------------------------------------------------------*/
+div.ws-view-content{
+    margin-top: 40px;
+    height: calc(100% - 40px);
+    xbackground-color: red;
+}
+
+div.content-leftbar{
+    left: 200px;
+    height: calc(100% - 40px);
+    width: calc(100% - 200px);
+    position: absolute;
+    overflow-x: auto;
+}
+
+div.content-rightbar{
+    height: calc(100% - 40px);
+    width: calc(100% - 300px);
+    position: absolute;
+    overflow-x: auto;
+}
+
+div.content-full{
+    left: 200px;
+    height: calc(100% - 40px);
+    width: calc(100% - 500px);
+    position: absolute;
+    overflow-x: auto;
+}
+
+div.ws-leftbar {   
+    position: absolute;
+    left: 0px;
+    height: calc(100% - 40px);
+    min-width: 200px;
+    max-width: 200px;
+    background-color: azure;
+}
+
+div.ws-rightbar {
+    position: absolute;
+    height: calc(100% - 40px);
+    right: 0px;
+    min-width: 320px;
+    max-width: 199px;
+    background-color: aliceblue;
+    border-left: 1px solid rgba(0,0,0,0.2);
+}
+
+@media only screen and (min-width: 800px) {
+    div.ws-rightbar {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    div.content-full,
+    div.content-rightbar{
+        left: 0px;
+        width: 100%;
+    }
+
+    div.content-leftbar{
+        left: 0px;
+        width: calc(100% - 50px);
+    }
+
+    div.ws-header-logo,
+    div.ws-header-account span,
+    div.ws-header-separator,
+    div.ws-rightbar,
+    div.ws-account-menu-panel,
+    div.ws-account-menu-secretion{
+        display: none;
+    }
+
+    div.ws-header-left{
+        min-width: inherit;
+    }
+}
+
+div.notification-right-sidebar {
+    display: none;
+    position: absolute;
+    right: 0;
+    width: 300px;
+    height: calc( 100% - 40px);
+    top: 40px;
+    background-color: #EEE;
+    padding-right: 20px;
+    border-left: 1px solid lightgray;
+    overflow-y: auto;
+    overflow-x:hidden;
+}

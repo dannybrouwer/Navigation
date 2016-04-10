@@ -1,0 +1,51 @@
+﻿div.tileContainer{
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    background-color: white;
+    margin: 0px;
+    color: white;
+    box-shadow: 0px 8px 13px 0px lightgrey;
+    display: none;
+    z-index: 9999;
+    padding: 5px;
+}
+
+ul.tile-content{
+    margin:0px;
+    padding: 0px;
+}
+
+ul.tile-content > li{
+    display: inline-block;
+    width: 100px;
+    height: 100px; 
+    padding: 5px;      
+    margin: 5px;
+    text-align:center;
+    word-wrap: break-word;      
+}
+ul.tile-content > li:hover{ 
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+ul.tile-content > li > i{
+    display: block;
+    background-color: transparent;
+    line-height: 75px;
+    text-align: center;
+    color: white;
+}
+
+ul.tile-content > li > span{
+    color: white;
+    font-family: Verdana;
+    font-size: 11px;
+    display: inline-table;
+    text-align: center;
+    margin-bottom:5px;
+    line-height:11px;
+    position: relative;
+    bottom: 15px;
+}

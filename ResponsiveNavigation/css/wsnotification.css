@@ -1,0 +1,154 @@
+﻿/*-----------------------------------------------------------*/
+/* Side notification                                         */ 
+/*-----------------------------------------------------------*/
+li.information{
+    background-color: #009be6;
+    display: none;
+}
+
+li.warning{
+    background-color: #D82F2F;
+    display: none;
+}
+
+ul.sideNotification{
+    position: absolute;
+    top:100px;
+    right: 50px;
+    display: none;
+    z-index: 9999;
+    list-style-type: none;
+    margin-top:0px;
+}
+
+ul.sideNotification > li {
+    margin-bottom: 10px;
+    box-shadow: 0px 8px 13px 0px lightgrey;
+    width: 350px;
+    min-height: 100px;
+}
+
+ul.sideNotification > li > div > i{
+    float: right;
+    color: white;
+    padding-top: 5px;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+ul.sideNotification > li > div > span{
+    position: relative;
+    left: 20px;
+    top: 18px;
+    color: white;
+}
+
+ul.sideNotification > li > div > div{
+    width: calc(100% - 108px);
+    position: relative;
+    top: -33px;
+    left: 80px;
+    color: white;
+    line-height: 16px;
+    font-size: 13px;
+}
+
+ul.sideNotification > li > div > div > span{
+    display: inherit;
+}
+
+ul.sideNotification > li > div > div > span:first-child{
+    font-weight: bold;
+}
+
+/*-----------------------------------------------------------*/
+/* Top notification                                          */ 
+/*-----------------------------------------------------------*/
+div.warningNotification{
+    background-color: white;
+    width: 100%;
+    height: 40px;
+    background-color: #3C3B3B;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: none;
+    z-index: 10;
+}
+
+div.warningDiv{
+    position: absolute;
+    left: 10px;
+    width: 35px;
+}
+
+div.warningContent{
+    position: absolute;
+    left: 50px;
+    width: 90%;
+    height: 100%;
+}
+
+div.warningContent > p{
+    margin: 10px;
+    white-space: nowrap; 
+    width: 100%; 
+    text-overflow:ellipsis;
+    overflow: hidden; 
+    color: white;
+}
+
+div.closeIcon{
+    position: absolute;
+    top:10px;
+    right: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+div.warningDiv > span{
+    width: 95%;
+    height: 100%;
+    color: white;
+    text-align: center;
+    line-height: 1.7;
+    font-size: 25px;
+}
+
+/*-----------------------------------------------------------*/
+/* Notification bar (right)                                  */ 
+/*-----------------------------------------------------------*/
+
+div.notification-right-sidebar > ul {
+    list-style-type: none;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+div.notification-right-sidebar > ul > li{
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: #ddd 0px 2px 2px;
+    font-size: 12px;
+    padding: 10px;
+    min-height: 50px;
+    margin-bottom: 5px;
+    color:#858585;
+    line-height: 16px;
+}
+
+div.notification-right-sidebar > ul > li b, div.notification-right-sidebar > ul > li > b span:hover{
+    color: black;
+}
+
+div.notification-right-sidebar > ul > li > b span{
+    position: absolute;
+    right: 43px;
+    color:#A9A9A9; 
+    cursor: pointer;
+}
+
+div.notification-right-sidebar h2{
+    margin-left: 20px;
+    font-weight: lighter;
+}

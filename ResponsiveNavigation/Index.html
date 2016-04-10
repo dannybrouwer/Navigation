@@ -1,0 +1,124 @@
+﻿<html>
+<head>
+    <title>Responsive Navigation</title>
+    <script type="text/javascript" src="scripts/jquery-2.2.2.min.js"></script>
+    <link rel="stylesheet" href="/css/default.css">
+    <link rel="stylesheet" href="/css/fonts/awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="css/wsframework.css">
+    <link rel="stylesheet" href="css/wsheader.css">
+    <link rel="stylesheet" href="css/wsmenu.css">
+    <link rel="stylesheet" href="css/wsnavigator.css">
+    <link rel="stylesheet" href="css/wstile.css">
+    <link rel="stylesheet" href="css/wsnotification.css">
+    <script type="text/javascript" src="scripts/wsframework.js"></script>
+    <script type="text/javascript" src="scripts/wsmenu.js"></script>
+    <script type="text/javascript" src="scripts/wsnavigator.js"></script>
+    <script type="text/javascript" src="scripts/wsnotifications.js"></script>
+    <script type="text/javascript" src="scripts/wstiles.js"></script>
+</head>
+<body>
+    <div id="fullPage" class="ws-view-window">
+        <!-- BEGIN HEADER -->
+        <div class="ws-header">
+            <div class="ws-header-left">
+                <div class="ws-header-hamburger"><a id="btn-hamburger"><i class="fa fa-reorder fa-1x"></i></a></div>
+                <!--<div class="ws-header-logo"><img src="/images/eformity-logo.png" /></div>-->
+            </div>
+            <div id="headerNavigation" class="ws-header-middle">
+                <ul data-ws-role="navigator" class="ws-header-navigator">
+                    <li><a>Document builder</a></li>
+                    <li><a>Beheer</a></li>
+                    <li><a>User Editor</a></li>
+                    <li><a>Table</a></li>
+                    <li><a>TreeTable</a></li>
+                    <li><a data-ajax="true" >Powerpoint</a></li>
+                </ul>
+            </div>
+            <div id="ws-header-right" class="ws-header-right">
+                <ul class='ws-header-icons'>
+                    <li id='btn-notification' class='fa fa-bell-o notification-icon'><span id='notification-counter' class='ws-notification-counter'></span></li>
+                </ul>
+                <div class="ws-header-separator"></div>
+                <div class="ws-header-account">
+                    <a id="btn-account" href="">
+                        <span>Danny Brouwer</span>
+                        <img src="/images/avatar.png" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- END HEADER -->
+        <!-- ACCOUNTMENU -->
+        <div id="ws-header-account-menu" class="ws-account-menu" data-ws-role="usermenu">
+            <div class="ws-account-menu-panel">
+                <img src="/images/avatar.png" />
+                <p>Danny Brouwer</p>
+            </div>
+            <div class="ws-account-menu-secretion"></div>
+            <ul>
+                <li><a href="">Mijn account</a></li>
+                <li><a href="">Mijn abonnement</a></li>
+                <li><a href="">Uitloggen</a></li>
+            </ul>
+        </div>
+        <div class="tileContainer">
+            <ul id="tiles">
+                <li data-icon="fa-file-powerpoint-o" data-color="#d04727" data-text="Powerpoint" data-url="https://www.google.com/intl/nl/slides/about/"></li>
+                <li data-icon="fa-file-powerpoint-o" data-color="#1f7043" data-text="Excel" data-url="https://www.google.com/intl/nl/sheets/about/"></li>
+                <li data-icon="fa-file-powerpoint-o" data-color="green" data-text="Word" data-url="https://www.google.com/intl/nl/docs/about/"></li>
+            </ul>
+        </div>
+
+        <h1 id="notifications" style="position: relative; text-align: center; top: 400px; width:100%;">Klik hier om een voorbeeld te zien van de notificaties</h1>
+    </div>
+</body>
+</html>
+
+<script>
+        $(document).ready(function () {
+            $("[data-ws-role='navigator']").wsnavigator({
+                reflow: true,
+                type: "navigator",
+            });
+
+            $("[data-ws-role='usermenu']").wsmenu({
+                autoResize: true, autoHide: true
+            });
+
+            eformity.notification.notificationCenter({
+                title: "Dit is een titel 1",
+                content: "Dit is een content",
+                id: "een",
+            });
+
+            $("#btn-account").click(function () {
+                eformity.framework.toggleVisibility($('#ws-header-account-menu'));
+                return false;
+            });
+
+            $("#tiles").wstiles({
+                defaultColor: "purple",
+                defaultIcon: "fa-envelope",
+            });
+
+            $(".ws-header-hamburger").click(function () {
+                $(".tileContainer").slideToggle("fast");
+            });
+
+            $("#notifications").click(function () {
+                eformity.notification.sideNotification({
+                    type: "information", //You can choose between 'information' or 'warning'
+                    title: "Hello, information!",
+                    message: "Dit is de inhoud van de informatie notificatie",
+                    timeout: 500,
+                    stay: 5000,
+                });
+                eformity.notification.warning({
+                    timeout: 100,
+                    content: "Dit is een warning notificatie, sluit hem door op het kruisje te drukken."
+                });
+            });
+
+            eformity.notification.showNotificationcenter();
+        });
+</script>
